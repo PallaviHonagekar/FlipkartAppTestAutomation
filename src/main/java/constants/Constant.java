@@ -6,5 +6,5 @@ public class Constant {
 	
 	public  static final String DRIVER = "driver";
 	
-	public static final String LOGIN_DATA_PROVIDER = "loginDataProvider";
+	public static final String TEST_PRODUCTS_DATA_PROVIDER = "testProductsDataProvider";
 }

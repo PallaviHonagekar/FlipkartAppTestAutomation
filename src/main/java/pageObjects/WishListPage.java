@@ -9,12 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import basePackage.PageBase;
 
 public class WishListPage extends PageBase {
-
-	@FindBy(xpath = "//div[contains(@class,'_2W9EDl')]")
-	private List<WebElement> allProducts;
 	
 	By allProductsLocator = By.xpath("//div[contains(@class,'_2W9EDl')]");
-	By productName = By.xpath("//div[contains(@class,'TLVGit')]");
+	//By productName = By.xpath("//div[contains(@class,'TLVGit')]");
 			
 	@FindBy(xpath = "//div[contains(@class,'TLVGit')]")
 	private List<WebElement> productNameElements;
@@ -26,7 +23,7 @@ public class WishListPage extends PageBase {
 	public boolean checkMyWishList(String myWishListItem) {
 		waitForAllElementsToPresent(allProductsLocator);
 		for(WebElement productNameElement : productNameElements) {
-			String productName = waitAndGetText(productNameElement);
+			String productName = waitAndGetText(productNameElement).toLowerCase();
 			//System.out.println(productName + myWishListItem);
 			if(productName.equals(myWishListItem)) {
 				return true;
